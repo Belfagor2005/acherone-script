@@ -1,0 +1,11 @@
+Package: enigma2-plugin-extensions-acherone
+Version: 1.2
+Section: enigma2
+Priority: optional
+Architecture: all
+Maintainer: Lululla
+Description: Script executor
+Source: enigma2-plugin-extensions-acherone
+Homepage: *
+OE: enigma2-plugin-extensions-acherone
+License: *

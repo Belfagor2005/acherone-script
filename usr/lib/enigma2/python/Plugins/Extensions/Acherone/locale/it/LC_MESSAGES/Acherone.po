@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nssManager\n"
+"POT-Creation-Date: 2025-01-08 22:48+0100\n"
+"PO-Revision-Date: 2025-01-08 22:50+0100\n"
+"Last-Translator: \n"
+"Language-Team: lululla\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: plugin.py:57
+msgid "Available Scripts"
+msgstr "Script Disponibili"
+
+#: plugin.py:58
+msgid "Description:\n"
+msgstr "Descrizione:\n"
+
+#: plugin.py:59
+msgid "Close"
+msgstr "Esci"
+
+#: plugin.py:60
+msgid "Select"
+msgstr "Seleziona"
+
+#: plugin.py:61
+msgid "Download"
+msgstr "Download"
+
+#: plugin.py:119
+msgid "Download Script Pack?"
+msgstr ""
+
+#: plugin.py:148
+msgid "Description not available"
+msgstr "Descrizione non disponibile"
+
+#: plugin.py:160
+msgid "Execute Script Selected?"
+msgstr "Eseguire lo script selezionato?"
+
+#: plugin.py:190 plugin.py:191
+msgid "Plugin by Lululla"
+msgstr ""
