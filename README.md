@@ -6,4 +6,3 @@ versione 1.1
 
 
 Enigma2 project by Lululla
-
