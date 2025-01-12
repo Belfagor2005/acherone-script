@@ -117,7 +117,7 @@ rm -rf $TMPPATH > /dev/null 2>&1
 sync
 
 
-exec > >(tee -a /tmp/acherone_debug.txt) 2>&1
+exec > >(tee -a /tmp/debug.txt) 2>&1
 set -x
 
 # # Identify the box type from the hostname file
