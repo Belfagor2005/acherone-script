@@ -7,7 +7,7 @@ from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Sources.List import List
 from Plugins.Plugin import PluginDescriptor
-from Screens.Console import Console
+# from Screens.Console import Console
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from os import listdir, makedirs, chmod
@@ -190,8 +190,29 @@ class OpenScript(Screen):
 					mysel = mysel[0]
 					mysel2 = '/usr/script/' + mysel + '.sh'
 					chmod(mysel2, 0o0777)
-					mytitle = _("Script Executor %s") % mysel
-					self.session.open(Console, title=mytitle, cmdlist=[mysel2])
+					# mytitle = _("Script Executor %s") % mysel
+					# self.session.open(Console, title=mytitle, cmdlist=[mysel2])
+					log_file = '/tmp/my_debug.log'
+					cmd = [mysel2]
+					import subprocess
+					with open(log_file, 'w') as f:
+						# process = subprocess.Popen(cmd, stdout=f, stderr=subprocess.STDOUT)
+						# process.communicate()  # Aspetta che il processo finisca
+
+					# # self.session.openWithCallback(self.openVi, Console, _(mytitle), cmdlist=[cmd])
+					# cmd = ["/bin/sh", "/usr/script/standby_enter.sh"]
+						# process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+						process = subprocess.Popen(cmd, stdout=f, stderr=subprocess.STDOUT)
+						process.wait()
+						self.openVi(None)
+
+	def openVi(self, callback=''):
+		from .File_Commander import File_Commander
+		user_log = '/tmp/my_debug.log'
+		if os.path.exists(user_log):
+			self.session.open(File_Commander, user_log)
+		else:
+			print("Error: Log file not found or empty.")
 
 
 def main(session, **kwargs):
@@ -206,5 +227,7 @@ def StartSetup(menuid):
 
 
 def Plugins(**kwargs):
-	return [PluginDescriptor(name="Acherone Script", description=_("Openscript by Lululla"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=main),
-			PluginDescriptor(name="Acherone Script", description=_("Openscript by Lululla"), where=PluginDescriptor.WHERE_MENU, fnc=StartSetup)]
+	return [
+		PluginDescriptor(name="Acherone Script", description=_("Openscript by Lululla"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=main),
+		PluginDescriptor(name="Acherone Script", description=_("Openscript by Lululla"), where=PluginDescriptor.WHERE_MENU, fnc=StartSetup)
+	]
