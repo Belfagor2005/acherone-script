@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# from .. import _
 # Components
 from Components.ActionMap import ActionMap
 from Components.Label import Label
@@ -108,7 +107,7 @@ class File_Commander(Screen):
             "back": self.exitEditor,
             "red": self.exitEditor,
             "yellow": self.del_Line,
-            "blue": self.del_Line,
+            "blue": self.ins_Line,
             "chplus": self.posStart,
             "chminus": self.posEnd,
         }, -1)
@@ -150,6 +149,12 @@ class File_Commander(Screen):
         self["filedata"].moveToIndex(len(self.list) - 1)
 
     def del_Line(self):
+        self.selLine = self["filedata"].getSelectionIndex()
+        self.list.insert(self.selLine, "0000: " + "" + '\n')
+        self.isChanged = True
+        self.refreshList()
+
+    def ins_Line(self):
         self.selLine = self["filedata"].getSelectionIndex()
         self.list.insert(self.selLine, "0000: " + "" + '\n')
         self.isChanged = True
