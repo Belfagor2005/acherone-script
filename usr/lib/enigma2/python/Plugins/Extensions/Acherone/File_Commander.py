@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # Components
-# from Components.config import config
 from Components.Label import Label
 from Components.ActionMap import ActionMap
 from Components.MenuList import MenuList
@@ -10,12 +9,13 @@ from enigma import eLabel
 
 # Screens
 from Screens.Screen import Screen
-# from Screens.MessageBox import MessageBox
-# from Screens.HelpMenu import HelpableScreen
 
 # Tools
 from Tools.Directories import fileExists  # , fileReadLines
 from errno import ENOENT
+
+# Import local modules
+from . import _, isDreambox
 
 DEFAULT_MODULE_NAME = __name__.split(".")[-1]
 
@@ -45,30 +45,38 @@ def fileReadLines(filename, default=None, source=DEFAULT_MODULE_NAME, debug=Fals
 
 class File_Commander(Screen):
 
-	skin = """
-		<screen name="File_Commander" position="40,80" size="1900,900" title="Lululla_Commander">
-			<widget name="list_head" position="8,10" size="1850,45" font="Regular;24" foregroundColor="#00fff000" />
-			<widget name="filedata" scrollbarMode="showOnDemand" itemHeight="45" position="9,78" size="1850,725" />
-			<!--
-			<widget name="key_red" position="100,840" size="260,40" transparent="1" font="Regular;24" />
-			<widget name="key_green" position="395,840" size="260,40" transparent="1" font="Regular;24" />
-			<widget name="key_yellow" position="690,840" size="260,40" transparent="1" font="Regular;24" />
-			<widget name="key_blue" position="985,840" size="260,40" transparent="1" font="Regular;24" />
-			-->
-			<widget name="key_red" position="95,820" zPosition="19" size="260,40" transparent="1" font="Regular;24" halign="center" />
-			<widget name="key_green" position="395,820" zPosition="19" size="260,40" transparent="1" font="Regular;24" halign="center" />
-			<widget name="key_yellow" position="690,820" zPosition="19" size="260,40" transparent="1" font="Regular;24" halign="center" />
-			<widget name="key_blue" position="985,820" zPosition="19" size="260,40" transparent="1" font="Regular;24" halign="center" />
-			<ePixmap position="95,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-			<ePixmap position="395,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-			<ePixmap position="690,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-			<ePixmap position="985,870" size="260,25" zPosition="0" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-		</screen>"""
+	if isDreambox:
+		skin = """
+			<screen name="File_Commander" position="40,80" size="1900,900" title="Lululla_Commander">
+				<widget name="list_head" position="8,10" size="1850,45" font="Regular;24" foregroundColor="#00fff000" />
+				<widget name="filedata" scrollbarMode="showOnDemand" itemHeight="45" position="9,78" size="1850,725" />
+				<widget name="key_red" position="95,820" zPosition="19" size="260,40" transparent="1" font="Regular;26" halign="center" />
+				<widget name="key_green" position="395,820" zPosition="19" size="260,40" transparent="1" font="Regular;26" halign="center" />
+				<widget name="key_yellow" position="690,820" zPosition="19" size="260,40" transparent="1" font="Regular;26" halign="center" />
+				<widget name="key_blue" position="985,820" zPosition="19" size="260,40" transparent="1" font="Regular;26" halign="center" />
+				<ePixmap position="95,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+				<ePixmap position="395,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+				<ePixmap position="690,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+				<ePixmap position="985,870" size="260,25" zPosition="0" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+			</screen>"""
+	else:
+		skin = """
+			<screen name="File_Commander" position="40,80" size="1900,900" title="Lululla_Commander">
+				<widget name="list_head" position="8,10" size="1850,45" font="Regular;28" foregroundColor="#00fff000" />
+				<widget name="filedata" scrollbarMode="showOnDemand" font="Regular;35" itemHeight="45" position="9,78" size="1850,725" />
+				<widget name="key_red" position="95,820" zPosition="19" size="260,40" transparent="1" font="Regular;26" halign="center" />
+				<widget name="key_green" position="395,820" zPosition="19" size="260,40" transparent="1" font="Regular;26" halign="center" />
+				<widget name="key_yellow" position="690,820" zPosition="19" size="260,40" transparent="1" font="Regular;26" halign="center" />
+				<widget name="key_blue" position="985,820" zPosition="19" size="260,40" transparent="1" font="Regular;26" halign="center" />
+				<ePixmap position="95,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+				<ePixmap position="395,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+				<ePixmap position="690,865" size="260,25" zPosition="0" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+				<ePixmap position="985,870" size="260,25" zPosition="0" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+			</screen>"""
 
 	def __init__(self, session, file):
 		self.skin = File_Commander.skin
 		Screen.__init__(self, session)
-		# HelpableScreen.__init__(self)
 		self.file_name = file
 		title = "Lululla File Commander"
 		self.newtitle = title == 'vEditorScreen' and ('Console') or title
@@ -81,8 +89,6 @@ class File_Commander(Screen):
 			"red": self.exitEditor,
 			"yellow": self.del_Line,
 			"blue": self.ins_Line,
-			# "chplus": self.posStart,
-			# "chminus": self.posEnd,
 		}, -1)
 		self["list_head"] = Label(self.file_name)
 		self["key_red"] = Label(_("Exit"))
@@ -125,7 +131,7 @@ class File_Commander(Screen):
 			new_line = callback
 			self.list[self.selLine] = (new_line,)
 			self.isChanged = True
-			self.refreshList()  # Rendi visibile la lista aggiornata
+			self.refreshList()
 
 	def del_Line(self):
 		self.selLine = self["filedata"].getSelectionIndex()

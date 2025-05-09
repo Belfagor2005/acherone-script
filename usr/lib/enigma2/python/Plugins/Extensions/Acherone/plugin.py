@@ -1,20 +1,28 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/python
 
-from . import _, fps
+# Import standard library
+import codecs
+from os import chmod, listdir, makedirs, remove, system as os_system
+from os.path import exists, join
+from random import choice
 
+# Import third-party libraries
+from requests import exceptions, get
+
+# Import Enigma2 API
+from enigma import eConsoleAppContainer
+
+# Import project-specific components
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Sources.List import List
 from Plugins.Plugin import PluginDescriptor
-# from Screens.Console import Console
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
-from os import listdir, makedirs, chmod
-import os
-import codecs
-from random import choice
-from requests import get, exceptions
+
+# Import local modules
+from . import _, fps
 
 
 AGENTS = [
@@ -26,6 +34,12 @@ AGENTS = [
 	"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363"
 ]
 version = 'v.1.2'
+
+
+CONFIG = {
+	"script_url": fps,
+	"script_dir": "/usr/script"
+}
 
 
 class OpenScript(Screen):
@@ -85,7 +99,7 @@ class OpenScript(Screen):
 
 	def refresh_list(self):
 		try:
-			if not os.path.exists('/usr/script'):
+			if not exists('/usr/script'):
 				makedirs('/usr/script', 493)
 		except:
 			pass
@@ -118,24 +132,30 @@ class OpenScript(Screen):
 
 	def getScrip(self, url):
 		dest = '/tmp/script.tar'
-		headers = {"User-Agent": choice(AGENTS)}
 		try:
-			response = get(url, headers=headers, timeout=(3.05, 6))
+			headers = {"User-Agent": choice(AGENTS)}
+			response = get(url, headers=headers, timeout=10)
 			response.raise_for_status()
-			with open(dest, 'wb') as file:
-				file.write(response.content)
-			command = "rm -rf /usr/script/* ;tar -xvf /tmp/script.tar -C /usr/script"
-			os.system(command)
-			if os.path.exists(dest):
-				os.remove(dest)
+
+			with open(dest, 'wb') as f:
+				f.write(response.content)
+
+			os_system("rm -rf /usr/script/*")
+			os_system("tar -xf %s -C /usr/script/" % dest)
+			remove(dest)
+
+			for script in listdir('/usr/script'):
+				script_path = join('/usr/script', script)
+				if script.endswith('.sh'):
+					chmod(script_path, 0o755)
+
 			self.refresh_list()
-			self.session.open(MessageBox, _('Scripts downloaded and extracted successfully!'), MessageBox.TYPE_INFO)
-		except exceptions.RequestException as error:
-			print("Error during script download:", str(error))
-			self.session.open(MessageBox, _('Error during script download: %s') % str(error), MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, _("Download completed successfully!"), MessageBox.TYPE_INFO)
+
+		except exceptions.RequestException as e:
+			self.session.open(MessageBox, _("Network error: %s") % str(e), MessageBox.TYPE_ERROR)
 		except Exception as e:
-			print("Error during script extraction:", str(e))
-			self.session.open(MessageBox, _('Error during script extraction: %s') % str(e), MessageBox.TYPE_ERROR)
+			self.session.open(MessageBox, str(e), MessageBox.TYPE_ERROR)
 
 	def sremove(self):
 		self.session.openWithCallback(self.xremove, MessageBox, _('Remove all scripts from folder?'), MessageBox.TYPE_YESNO)
@@ -143,7 +163,7 @@ class OpenScript(Screen):
 	def xremove(self, answer=False):
 		if answer:
 			command = "rm -rf /usr/script/*"
-			os.system(command)
+			os_system(command)
 			self.refresh_list()
 			self.session.open(MessageBox, _('Scripts successfully removed!'), MessageBox.TYPE_INFO)
 
@@ -169,9 +189,8 @@ class OpenScript(Screen):
 			self.session.open(MessageBox, _('Please Download Script!'), MessageBox.TYPE_INFO)
 
 	def get_description(self, script):
-		"""Ottieni la descrizione da uno script leggendo il commento iniziale."""
-		if not os.path.exists(script):
-			print("Il file non esiste:", script)
+		if not exists(script):
+			print("File not found:", script)
 			return None
 		try:
 			with open(script, "r") as f:
@@ -179,40 +198,71 @@ class OpenScript(Screen):
 					if line.startswith("##DESCRIPTION=") or line.startswith("#DESCRIPTION="):
 						return line.replace("##DESCRIPTION=", "").replace("#DESCRIPTION=", "").replace('_', ' ').replace('-', ' ').replace('\\n', ' ').capitalize().strip()
 		except Exception as e:
-			print("Errore durante l'apertura del file:", e)
+			print("Error opening file:", e)
 			return None
 
 	def selectsc(self, answer=False):
 		if answer:
-			if len(self.mlist) > 0:
-				mysel = self['list'].getCurrent()
-				if mysel:
-					mysel = mysel[0]
-					mysel2 = '/usr/script/' + mysel + '.sh'
-					chmod(mysel2, 0o0777)
-					# mytitle = _("Script Executor %s") % mysel
-					# self.session.open(Console, title=mytitle, cmdlist=[mysel2])
-					log_file = '/tmp/my_debug.log'
-					cmd = [mysel2]
-					import subprocess
-					with open(log_file, 'w') as f:
-						# process = subprocess.Popen(cmd, stdout=f, stderr=subprocess.STDOUT)
-						# process.communicate()  # Aspetta che il processo finisca
+			mysel = self['list'].getCurrent()
+			if mysel:
+				script_path = "/usr/script/" + mysel[0] + ".sh"
+				if not exists(script_path):
+					self.session.open(MessageBox, _("Script not found!"), MessageBox.TYPE_ERROR)
+					return
 
-					# # self.session.openWithCallback(self.openVi, Console, _(mytitle), cmdlist=[cmd])
-					# cmd = ["/bin/sh", "/usr/script/standby_enter.sh"]
-						# process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-						process = subprocess.Popen(cmd, stdout=f, stderr=subprocess.STDOUT)
-						process.wait()
-						self.openVi(None)
+				self.container = eConsoleAppContainer()
+				try:
+					self.container.appClosed.append(self.finishExecution)
+				except:
+					self.container.appClosed_conn = self.container.appClosed.connect(self.finishExecution)
+				self.container.execute("sh {}".format(script_path))
+				self.log_file = "/tmp/acherone.log"
+				open(self.log_file, 'w').close()
+				try:
+					self.container.dataAvail.append(self.logData)
+				except:
+					self.container.dataAvail_conn = self.container.dataAvail.connect(self.logData)
 
-	def openVi(self, callback=''):
-		from .File_Commander import File_Commander
-		user_log = '/tmp/my_debug.log'
-		if os.path.exists(user_log):
-			self.session.open(File_Commander, user_log)
+	def logData(self, data):
+		with open(self.log_file, 'a') as f:
+			f.write(data.decode())
+			f.flush()
+
+	def finishExecution(self, retval):
+		if retval == 0:
+			self.session.openWithCallback(
+				self.openVi,
+				MessageBox,
+				_("Execution completed!"),
+				MessageBox.TYPE_INFO
+			)
 		else:
-			print("Error: Log file not found or empty.")
+			self.session.openWithCallback(
+				self.openVi,
+				MessageBox,
+				_("Error while running (Code: %d)") % retval,
+				MessageBox.TYPE_ERROR
+			)
+
+	def openVi(self, callback=None):
+		user_log = '/tmp/acherone.log'
+		if exists(user_log):
+			try:
+				from .File_Commander import File_Commander
+				self.session.open(File_Commander, user_log)
+			except Exception as e:
+				print("Error opening File_Commander:", str(e))
+				self.session.open(
+					MessageBox,
+					_("Error opening log viewer: %s") % str(e),
+					MessageBox.TYPE_ERROR
+				)
+		else:
+			self.session.open(
+				MessageBox,
+				_("Log file not found!"),
+				MessageBox.TYPE_WARNING
+			)
 
 
 def main(session, **kwargs):

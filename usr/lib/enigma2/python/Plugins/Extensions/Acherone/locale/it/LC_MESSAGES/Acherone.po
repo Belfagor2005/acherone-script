@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nssManager\n"
-"POT-Creation-Date: 2025-01-08 22:48+0100\n"
-"PO-Revision-Date: 2025-01-08 22:50+0100\n"
+"POT-Creation-Date: 2025-05-09 17:58+0200\n"
+"PO-Revision-Date: 2025-05-09 18:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: lululla\n"
 "Language: it_IT\n"
@@ -10,43 +10,123 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: plugin.py:57
+#: File_Commander.py:25
+msgid "File Commander - Addon"
+msgstr ""
+
+#: File_Commander.py:26
+msgid "play/show Files"
+msgstr ""
+
+#: File_Commander.py:94
+msgid "Exit"
+msgstr "Esci"
+
+#: File_Commander.py:95
+msgid "Save"
+msgstr "Salva"
+
+#: File_Commander.py:96
+msgid "Del Line"
+msgstr "Elimina"
+
+#: File_Commander.py:97
+msgid "Ins Line"
+msgstr "Inserisci"
+
+#: plugin.py:82
 msgid "Available Scripts"
 msgstr "Script Disponibili"
 
-#: plugin.py:58
+#: plugin.py:83
 msgid "Description:\n"
 msgstr "Descrizione:\n"
 
-#: plugin.py:59
+#: plugin.py:84
 msgid "Close"
 msgstr "Esci"
 
-#: plugin.py:60
+#: plugin.py:85
 msgid "Select"
 msgstr "Seleziona"
 
-#: plugin.py:61
+#: plugin.py:86
 msgid "Download"
 msgstr "Download"
 
-#: plugin.py:119
+#: plugin.py:87
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: plugin.py:125
+#, python-format
+msgid "%s"
+msgstr ""
+
+#: plugin.py:153
+msgid "Download completed successfully!"
+msgstr "Download completato con successo!"
+
+#: plugin.py:156
+#, python-format
+msgid "Network error: %s"
+msgstr ""
+
+#: plugin.py:161
+msgid "Remove all scripts from folder?"
+msgstr "Rimuovere tutti gli script dalla cartella?"
+
+#: plugin.py:168
+msgid "Scripts successfully removed!"
+msgstr "Script rimosso con successo!"
+
+#: plugin.py:171
 msgid "Download Script Pack?"
 msgstr ""
 
-#: plugin.py:148
-msgid "Description not available"
-msgstr "Descrizione non disponibile"
+#: plugin.py:183
+#, python-format
+msgid "Script Executor %s"
+msgstr ""
 
-#: plugin.py:160
+#: plugin.py:187
 msgid "Execute Script Selected?"
 msgstr "Eseguire lo script selezionato?"
 
-#: plugin.py:190 plugin.py:191
-msgid "Plugin by Lululla"
+#: plugin.py:189
+msgid "Please Download Script!"
+msgstr "Preego scarica il pacchetto script!"
+
+#: plugin.py:210
+msgid "Script not found!"
+msgstr "Script non trovato!"
+
+#: plugin.py:236
+msgid "Execution completed!"
+msgstr "Esecuzione completata!"
+
+#: plugin.py:243
+#, python-format
+msgid "Error while running (Code: %d)"
+msgstr "Errore durante l'esecuzione (Code: %d)"
+
+#: plugin.py:257
+#, python-format
+msgid "Error opening log viewer: %s"
+msgstr "Errore apertura file log viewer: %s"
+
+#: plugin.py:263
+msgid "Log file not found!"
+msgstr "Log file non trovato!"
+
+#: plugin.py:281 plugin.py:282
+msgid "Openscript by Lululla"
 msgstr ""
+
+#~ msgid "Description not available"
+#~ msgstr "Descrizione non disponibile"
