@@ -7,139 +7,98 @@ version='1.3'
 changelog='\nFix Security E2'
 ##############################################################
 TMPPATH=/tmp/acherone-script-main
-FILEPATH=/tmp/main.tar.gz
+FILEPATH=/tmp/acherone-main.tar.gz
 
 if [ ! -d /usr/lib64 ]; then
-	PLUGINPATH=/usr/lib/enigma2/python/Plugins/Extensions/Acherone
+    PLUGINPATH=/usr/lib/enigma2/python/Plugins/Extensions/Acherone
 else
-	PLUGINPATH=/usr/lib64/enigma2/python/Plugins/Extensions/Acherone
+    PLUGINPATH=/usr/lib64/enigma2/python/Plugins/Extensions/Acherone
 fi
 
-## check depends packges
+# Check OS type
 if [ -f /var/lib/dpkg/status ]; then
-   STATUS=/var/lib/dpkg/status
-   OSTYPE=DreamOs
+    STATUS=/var/lib/dpkg/status
+    OSTYPE=DreamOs
 else
-   STATUS=/var/lib/opkg/status
-   OSTYPE=Dream
-fi
-echo ""
-
-if [ -f /usr/bin/wget ]; then
-    echo "wget exist"
-else
-	if [ $OSTYPE = "DreamOs" ]; then
-		echo "dreamos"
-		apt-get update && apt-get install wget
-	else
-		opkg update && opkg install wget
-	fi
+    STATUS=/var/lib/opkg/status
+    OSTYPE=Dream
 fi
 
+
+# Install wget if missing
+if ! command -v wget >/dev/null; then
+
+    if [ "$OSTYPE" = "DreamOs" ]; then
+
+        apt-get update && apt-get install -y wget
+    else
+        opkg update && opkg install wget
+    fi || { echo "Failed to install wget"; exit 1; }
+fi
+
+# Check Python version
 if python --version 2>&1 | grep -q '^Python 3\.'; then
-	echo "You have Python3 image"
-	PYTHON=PY3
-	Packagesix=python3-six
-	Packagerequests=python3-requests
+
+    PYTHON=PY3
+    Packagesix=python3-six
+    Packagerequests=python3-requests
 else
-	echo "You have Python2 image"
-	PYTHON=PY2
-	Packagerequests=python-requests
+
+    PYTHON=PY2
+    Packagerequests=python-requests
 fi
 
-if [ $PYTHON = "PY3" ]; then
-	if grep -qs "Package: $Packagesix" cat $STATUS ; then
-		echo ""
-	else
-		opkg update && opkg --force-reinstall --force-overwrite install python3-six
-	fi
-fi
-echo ""
-if grep -qs "Package: $Packagerequests" cat $STATUS ; then
-	echo ""
-else
-	echo "Need to install $Packagerequests"
-	echo ""
-	if [ $OSTYPE = "DreamOs" ]; then
-		apt-get update && apt-get install python-requests -y
-	 
-	elif [ $PYTHON = "PY3" ]; then
-		opkg update && opkg --force-reinstall --force-overwrite install python3-requests
-	elif [ $PYTHON = "PY2" ]; then
-	  
-		opkg update && opkg --force-reinstall --force-overwrite install python-requests
-	
-	fi
-fi
-echo ""
+# Install dependencies
+install_pkg() {
+    pkg="$1"
+    if ! grep -qs "Package: $pkg" "$STATUS"; then
+        echo "Installing $pkg..."
+        if [ "$OSTYPE" = "DreamOs" ]; then
+            apt-get update && apt-get install -y "$pkg" || return 1
+        else
+            opkg update && opkg install "$pkg" || return 1
+        fi
+    fi
+    return 0
+}
 
-## Remove tmp directory
-## [ -r $TMPPATH ] && rm -f $TMPPATH > /dev/null 2>&1
+install_pkg "$Packagerequests" || { echo "Dependency installation failed"; exit 1; }
+[ "$PYTHON" = "PY3" ] && install_pkg "$Packagesix"
 
-## Remove tmp directory
-## [ -r $FILEPATH ] && rm -f $FILEPATH > /dev/null 2>&1
+# Cleanup and install
+mkdir -p "$TMPPATH" || exit 1
+cd "$TMPPATH" || exit 1
 
-## Remove old plugin directory
-## [ -r $PLUGINPATH ] && rm -rf $PLUGINPATH
+wget --no-check-certificate 'https://github.com/Belfagor2005/acherone-script/archive/refs/heads/main.tar.gz' -O "$FILEPATH" || {
+    echo "Download failed"; exit 1;
+}
 
-## Download and install plugin
-## check depends packges
-mkdir -p $TMPPATH
-cd $TMPPATH
-set -e
-if [ -f /var/lib/dpkg/status ]; then
-   echo "# Your image is OE2.5/2.6 #"
-   echo ""
-else
-   echo "# Your image is OE2.0 #"
-   echo ""
-fi
+tar -xzf "$FILEPATH" -C /tmp/ || {
+    echo "Extraction failed"; exit 1;
+}
 
-# # if [ $OSTYPE != "DreamOs" ]; then
-	# # opkg update && opkg --force-reinstall --force-overwrite install ffmpeg gstplayer exteplayer3 enigma2-plugin-systemplugins-serviceapp
-# # fi
-sleep 2
+cp -r /tmp/acherone-script-main/usr/ / || {
+    echo "Copy failed"; exit 1;
+}
 
-wget --no-check-certificate 'https://github.com/Belfagor2005/acherone-script/archive/refs/heads/main.tar.gz'
-tar -xzf main.tar.gz
-cp -r 'acherone-script-main/usr' '/'
-set +e
-cd
-sleep 2
+# Verify installation
+[ ! -d "$PLUGINPATH" ] && { echo "Installation failed: $PLUGINPATH missing"; exit 1; }
 
-## Check if plugin installed correctly
-if [ ! -d $PLUGINPATH ]; then
-	echo "Some thing wrong .. Plugin not installed"
-	rm -rf $TMPPATH > /dev/null 2>&1	
-	exit 1
-fi
-rm -rf $TMPPATH > /dev/null 2>&1
+# Cleanup
+[ -n "$TMPPATH" ] && rm -rf "$TMPPATH"
+[ -f "$FILEPATH" ] && rm -f "$FILEPATH"
+
+
 sync
 
-
-exec > >(tee -a /tmp/debug.txt) 2>&1
-set -x
-
-# # Identify the box type from the hostname file
-FILE="/etc/image-version"
-box_type=$(head -n 1 /etc/hostname)
-distro_value=$(grep '^distro=' "$FILE" | awk -F '=' '{print $2}')
-distro_version=$(grep '^version=' "$FILE" | awk -F '=' '{print $2}')
-python_vers=$(python --version 2>&1)
+# Success message
 echo "#########################################################
-#                INSTALLED SUCCESSFULLY                 #
-#                developed by LULULLA                   #
-#               https://corvoboys.org                   #
-#########################################################
-#           your Device will RESTART Now                #
-#########################################################
-^^^^^^^^^^Debug information:
-BOX MODEL: $box_type
-OO SYSTEM: $OSTYPE
-PYTHON: $python_vers
-IMAGE NAME: $distro_value
-IMAGE VERSION: $distro_version"
-
-sleep 5
-killall -9 enigma2
+#          Acherone $version INSTALLED SUCCESSFULLY         #
+#########################################################"
+# Graceful restart
+if command -v systemctl >/dev/null; then
+    systemctl restart enigma2
+else
+    init 4 && sleep 2 && init 3
+fi
 exit 0
