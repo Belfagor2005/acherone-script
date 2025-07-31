@@ -24,12 +24,9 @@ else
     OSTYPE=Dream
 fi
 
-
 # Install wget if missing
 if ! command -v wget >/dev/null; then
-
     if [ "$OSTYPE" = "DreamOs" ]; then
-
         apt-get update && apt-get install -y wget
     else
         opkg update && opkg install wget
@@ -38,12 +35,10 @@ fi
 
 # Check Python version
 if python --version 2>&1 | grep -q '^Python 3\.'; then
-
     PYTHON=PY3
     Packagesix=python3-six
     Packagerequests=python3-requests
 else
-
     PYTHON=PY2
     Packagerequests=python-requests
 fi
@@ -88,13 +83,13 @@ cp -r /tmp/acherone-script-main/usr/ / || {
 [ -n "$TMPPATH" ] && rm -rf "$TMPPATH"
 [ -f "$FILEPATH" ] && rm -f "$FILEPATH"
 
-
 sync
 
 # Success message
 echo "#########################################################
 #          Acherone $version INSTALLED SUCCESSFULLY         #
 #########################################################"
+
 # Graceful restart
 if command -v systemctl >/dev/null; then
     systemctl restart enigma2
