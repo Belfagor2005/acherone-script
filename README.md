@@ -1,8 +1,13 @@
-OpenScript for enigma image
+# 📝 OpenScript for Enigma
 
-versione 1.1
+**Version 1.1**  
 
-<img src="https://github.com/Belfagor2005/acherone-script/blob/main/screen/screen.jpg?raw=true">
+**Enigma2 project by Lululla**
 
+---
 
-Enigma2 project by Lululla
+## 📺 Screenshot
+
+<p align="center">
+  <img src="https://github.com/Belfagor2005/acherone-script/blob/main/screen/screen.jpg?raw=true" height="300">
+</p>
