@@ -8,10 +8,14 @@ on:
 jobs:
   update-translations:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Important: useremo GITHUB_TOKEN manualmente
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -34,12 +38,11 @@ jobs:
             cd - > /dev/null
           done
 
-      - name: Commit updated translations
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add .
           git diff --cached --quiet || git commit -m "Update translations via workflow"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git push origin main
