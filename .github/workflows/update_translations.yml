@@ -37,9 +37,6 @@ jobs:
       - name: Run translation updater
         run: python3 update_all_plugins.py
 
-      - name: Show results
-        run: python3 show_translation_results.py
-
       - name: Commit translation changes
         run: |
           git config --global user.name "GitHub Actions"
