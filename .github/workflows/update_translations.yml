@@ -24,9 +24,7 @@ jobs:
       - name: Setup translation tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            gettext \
-            python3-lxml
+          sudo apt-get install -y gettext python3-lxml
 
       - name: Verify main script exists
         run: |
@@ -54,8 +52,12 @@ jobs:
             python3 << 'EOF'
 import json
 
-with open('translation_update_report.json', 'r') as f:
-    data = json.load(f)
+try:
+    with open('translation_update_report.json', 'r') as f:
+        data = json.load(f)
+except json.JSONDecodeError as e:
+    print(f"❌ JSON ERROR: {e}")
+    exit(1)
 
 print(f"Plugins processed: {data.get('total_plugins', 0)}")
 print(f"Successful: {data.get('successful', 0)}")
@@ -63,9 +65,9 @@ print(f"Failed: {data.get('failed', 0)}")
 
 for detail in data.get('details', []):
     status = "✅" if detail.get('success') else "❌"
-    name = detail.get('plugin_name', 'unknown')
-    new = detail.get('new_strings', 0)
-    print(f"{status} {name}: {new} new strings")
+    plugin_name = detail.get('plugin_name', 'unknown')
+    new_strings = detail.get('new_strings', 0)
+    print(f"{status} {plugin_name}: {new_strings} new strings")
 EOF
           else
             echo "⚠️ No translation report generated"
@@ -83,4 +85,4 @@ EOF
             git push
           else
             echo "✅ No translation files changed"
-          fi
+
