@@ -58,7 +58,8 @@ def find_all_plugins(root_dir: str = ".") -> List[Dict]:
                 }
 
                 # Avoid duplicates
-                if not any(p['plugin_dir'] == plugin_info['plugin_dir'] for p in plugins):
+                if not any(p['plugin_dir'] == plugin_info['plugin_dir']
+                           for p in plugins):
                     plugins.append(plugin_info)
 
     # Also find plugins without locale directories (create them)
@@ -122,8 +123,11 @@ def process_single_plugin(plugin_info: Dict) -> Dict:
         # 4. Update POT file
         pot_file = locale_dir / f"{plugin_info['plugin_name']}.pot"
         results['new_strings'] = update_pot_file(
-            xml_strings, py_strings, pot_file, locale_dir, plugin_info['plugin_name']
-        )
+            xml_strings,
+            py_strings,
+            pot_file,
+            locale_dir,
+            plugin_info['plugin_name'])
 
         # 5. Update PO files
         results['updated_po'] = update_po_files(pot_file, locale_dir)
@@ -160,10 +164,17 @@ def extract_from_xml(plugin_dir: Path) -> List[str]:
                 root = tree.getroot()
 
                 for elem in root.iter():
-                    for attr in ['text', 'description', 'title', 'caption', 'value', 'summary']:
+                    for attr in [
+                        'text',
+                        'description',
+                        'title',
+                        'caption',
+                        'value',
+                            'summary']:
                         if attr in elem.attrib:
                             text = elem.attrib[attr].strip()
-                            if text and not re.match(r'^#[0-9a-fA-F]{6,8}$', text):
+                            if text and not re.match(
+                                    r'^#[0-9a-fA-F]{6,8}$', text):
                                 strings.add(text)
             except Exception as e:
                 print(f"⚠️  Could not parse {xml_file.name}: {e}")
@@ -337,7 +348,10 @@ def main():
     for i, plugin in enumerate(plugins, 1):
         print(f"  {i:2}. {plugin['plugin_name']}")
         print(f"      📁 {plugin['plugin_dir']}")
-        print(f"      📄 {plugin['py_files']} Python files, {plugin['xml_files']} XML files")
+        print(
+            f"      📄 {
+                plugin['py_files']} Python files, {
+                plugin['xml_files']} XML files")
 
     # Process each plugin
     print(f"\n🔄 Processing {len(plugins)} plugin(s)...")
@@ -387,4 +401,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-
