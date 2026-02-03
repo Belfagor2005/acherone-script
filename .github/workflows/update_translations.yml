@@ -44,5 +44,11 @@ jobs:
           git config user.email "github-actions@github.com"
           git add .
           git diff --cached --quiet || git commit -m "Update translations via workflow"
+          
+          # Pull changes to avoid fast-forward issues
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          git fetch origin main
+          git reset --soft origin/main
+
+          # Push changes
           git push origin main
