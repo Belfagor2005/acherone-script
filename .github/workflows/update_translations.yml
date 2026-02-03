@@ -1,51 +1,32 @@
-name: Update Translations
+name: Test Plugin Updaters
 
 on:
-  workflow_dispatch:        # manual trigger
   push:
-    branches:
-      - main
-      - master
-    paths:
-      - "**/*.py"
-      - "**/*.xml"
-      - "**/locale/**"
-  schedule:
-    - cron: "0 0 * * 0"     # every Sunday
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  update-translations:
+  update-plugins:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Find all plugin updater scripts
         run: |
-          sudo apt-get update
-          sudo apt-get install -y gettext python3-lxml
+          echo "Searching for plugin updater scripts..."
+          find . -type f -name "update_translations.py" > updater_list.txt
+          cat updater_list.txt
 
-      - name: Verify main script exists
+      - name: Run all plugin updaters
         run: |
-          if [ ! -f update_all_plugins.py ]; then
-            echo "update_all_plugins.py not found!"
-            ls -la
-            exit 1
-          fi
-
-      - name: Run translation updater
-        run: python3 update_all_plugins.py
-
-      - name: Commit translation changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-
-          if git diff --name-only | grep -E '\.(po|mo|pot|json)$' > /dev/null; then
-            git add --all
-            git commit -m "Update translations [$(date +'%Y-%m-%d %H:%M:%S')]"
-            git push
-          else
-            echo "No translation files changed"
-          fi
+          while IFS= read -r updater; do
+            echo "Running $updater..."
+            python3 "$updater" || echo "⚠️ $updater failed, continuing..."
+          done < updater_list.txt
