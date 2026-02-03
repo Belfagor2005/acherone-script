@@ -1,0 +1,99 @@
+# Acherone translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Acherone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-02-03 01:08+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%s"
+msgstr "%s"
+
+msgid "Available Scripts"
+msgstr "Available Scripts"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Del Line"
+msgstr "Del Line"
+
+msgid "Description:\n"
+msgstr "Description:\n"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Download Script Pack?"
+msgstr "Download Script Pack?"
+
+msgid "Download completed successfully!"
+msgstr "Download completed successfully!"
+
+msgid "Error opening log viewer: %s"
+msgstr "Error opening log viewer: %s"
+
+msgid "Error while running (Code: %d)"
+msgstr "Error while running (Code: %d)"
+
+msgid "Execute Script Selected?"
+msgstr "Execute Script Selected?"
+
+msgid "Execution completed!"
+msgstr "Execution completed!"
+
+msgid "Exit"
+msgstr "Exit"
+
+msgid "File Commander - Addon"
+msgstr "File Commander - Addon"
+
+msgid "Ins Line"
+msgstr "Ins Line"
+
+msgid "Log file not found!"
+msgstr "Log file not found!"
+
+msgid "Network error: %s"
+msgstr "Network error: %s"
+
+msgid "Openscript by Lululla"
+msgstr "Openscript by Lululla"
+
+msgid "Please Download Script!"
+msgstr "Please Download Script!"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Remove all scripts from folder?"
+msgstr "Remove all scripts from folder?"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Script Executor %s"
+msgstr "Script Executor %s"
+
+msgid "Script not found!"
+msgstr "Script not found!"
+
+msgid "Scripts successfully removed!"
+msgstr "Scripts successfully removed!"
+
+msgid "Select"
+msgstr "Select"
+
+msgid "play/show Files"
+msgstr "play/show Files"

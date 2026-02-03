@@ -1,68 +1,69 @@
+# Acherone translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: nssManager\n"
+"Project-Id-Version: Acherone\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-05-09 18:01+0200\n"
-"Last-Translator: \n"
-"Language-Team: lululla\n"
-"Language: it_IT\n"
+"PO-Revision-Date: 2026-02-03 01:08+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish <es@tp.org.es>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
-"X-Poedit-Basepath: ../../..\n"
-"X-Poedit-SourceCharset: iso-8859-1\n"
-"X-Poedit-SearchPath-0: .\n"
 
 msgid "%s"
 msgstr ""
 
 msgid "Available Scripts"
-msgstr "Script Disponibili"
+msgstr ""
 
 msgid "Close"
-msgstr "Esci"
+msgstr ""
 
 msgid "Del Line"
-msgstr "Elimina"
+msgstr ""
 
 msgid "Description:\n"
-msgstr "Descrizione:\n"
+msgstr ""
 
 msgid "Download"
-msgstr "Download"
+msgstr ""
 
 msgid "Download Script Pack?"
 msgstr ""
 
 msgid "Download completed successfully!"
-msgstr "Download completato con successo!"
+msgstr ""
 
 msgid "Error opening log viewer: %s"
-msgstr "Errore apertura file log viewer: %s"
+msgstr ""
 
 msgid "Error while running (Code: %d)"
-msgstr "Errore durante l'esecuzione (Code: %d)"
+msgstr ""
 
 msgid "Execute Script Selected?"
-msgstr "Eseguire lo script selezionato?"
+msgstr ""
 
 msgid "Execution completed!"
-msgstr "Esecuzione completata!"
+msgstr ""
 
 msgid "Exit"
-msgstr "Esci"
+msgstr ""
 
 msgid "File Commander - Addon"
 msgstr ""
 
 msgid "Ins Line"
-msgstr "Inserisci"
+msgstr ""
 
 msgid "Log file not found!"
-msgstr "Log file non trovato!"
+msgstr ""
 
 msgid "Network error: %s"
 msgstr ""
@@ -71,31 +72,28 @@ msgid "Openscript by Lululla"
 msgstr ""
 
 msgid "Please Download Script!"
-msgstr "Preego scarica il pacchetto script!"
+msgstr ""
 
 msgid "Remove"
-msgstr "Rimuovi"
+msgstr ""
 
 msgid "Remove all scripts from folder?"
-msgstr "Rimuovere tutti gli script dalla cartella?"
+msgstr ""
 
 msgid "Save"
-msgstr "Salva"
+msgstr ""
 
 msgid "Script Executor %s"
 msgstr ""
 
 msgid "Script not found!"
-msgstr "Script non trovato!"
+msgstr ""
 
 msgid "Scripts successfully removed!"
-msgstr "Script rimosso con successo!"
+msgstr ""
 
 msgid "Select"
-msgstr "Seleziona"
+msgstr ""
 
 msgid "play/show Files"
 msgstr ""
-
-#~ msgid "Description not available"
-#~ msgstr "Descrizione non disponibile"

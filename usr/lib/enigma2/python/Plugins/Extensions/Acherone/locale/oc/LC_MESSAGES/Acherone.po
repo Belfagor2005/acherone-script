@@ -1,0 +1,98 @@
+# Acherone translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Acherone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-02-03 01:09+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Occitan\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "%s"
+msgstr ""
+
+msgid "Available Scripts"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Del Line"
+msgstr ""
+
+msgid "Description:\n"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Download Script Pack?"
+msgstr ""
+
+msgid "Download completed successfully!"
+msgstr ""
+
+msgid "Error opening log viewer: %s"
+msgstr ""
+
+msgid "Error while running (Code: %d)"
+msgstr ""
+
+msgid "Execute Script Selected?"
+msgstr ""
+
+msgid "Execution completed!"
+msgstr ""
+
+msgid "Exit"
+msgstr ""
+
+msgid "File Commander - Addon"
+msgstr ""
+
+msgid "Ins Line"
+msgstr ""
+
+msgid "Log file not found!"
+msgstr ""
+
+msgid "Network error: %s"
+msgstr ""
+
+msgid "Openscript by Lululla"
+msgstr ""
+
+msgid "Please Download Script!"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove all scripts from folder?"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Script Executor %s"
+msgstr ""
+
+msgid "Script not found!"
+msgstr ""
+
+msgid "Scripts successfully removed!"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "play/show Files"
+msgstr ""
