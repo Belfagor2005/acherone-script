@@ -1,12 +1,12 @@
-name: Test Plugin Updaters
+name: Update Translations
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  update-plugins:
+  update-translations:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,17 +16,20 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: Find all plugin updater scripts
+      - name: Install gettext (msgmerge, msgfmt)
         run: |
-          echo "Searching for plugin updater scripts..."
-          find . -type f -name "update_translations.py" > updater_list.txt
-          cat updater_list.txt
+          sudo apt-get update
+          sudo apt-get install -y gettext
 
-      - name: Run all plugin updaters
+      - name: Run translation updaters
         run: |
-          while IFS= read -r updater; do
-            echo "Running $updater..."
-            python3 "$updater" || echo "⚠️ $updater failed, continuing..."
-          done < updater_list.txt
+          # Loop through all subfolders looking for update_translations.py
+          for pyfile in $(find . -type f -name "update_translations.py"); do
+            plugin_dir=$(dirname "$pyfile")
+            echo "Running translation updater in $plugin_dir"
+            cd "$plugin_dir"
+            python3 update_translations.py
+            cd - > /dev/null
+          done
