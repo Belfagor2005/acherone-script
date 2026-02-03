@@ -1,7 +1,7 @@
 name: Update Translations
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # allows manual execution
   push:
     branches:
       - main
@@ -11,7 +11,7 @@ on:
       - "**/*.xml"
       - "**/locale/**"
   schedule:
-    - cron: "0 0 * * 0"   # ogni domenica
+    - cron: "0 0 * * 0"  # every Sunday
 
 jobs:
   update-translations:
@@ -21,67 +21,33 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup translation tools
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y gettext python3-lxml
 
       - name: Verify main script exists
         run: |
-          echo "📁 Checking for update_all_plugins.py..."
-          if [ -f "update_all_plugins.py" ]; then
-            echo "✅ Found: update_all_plugins.py"
-            ls -la update_all_plugins.py
-          else
-            echo "❌ ERROR: update_all_plugins.py not found!"
-            echo "Current directory: $(pwd)"
-            echo "Files:"
+          if [ ! -f update_all_plugins.py ]; then
+            echo "update_all_plugins.py not found!"
             ls -la
             exit 1
           fi
 
       - name: Run translation updater
-        run: |
-          echo "🚀 Running update_all_plugins.py..."
-          python3 update_all_plugins.py
+        run: python3 update_all_plugins.py
 
       - name: Show results
-        run: |
-          if [ -f "translation_update_report.json" ]; then
-            echo "📊 Translation Update Results:"
-            python3 << 'EOF'
-import json
+        run: python3 show_translation_results.py
 
-try:
-    with open('translation_update_report.json', 'r') as f:
-        data = json.load(f)
-except json.JSONDecodeError as e:
-    print(f"❌ JSON ERROR: {e}")
-    exit(1)
-
-print(f"Plugins processed: {data.get('total_plugins', 0)}")
-print(f"Successful: {data.get('successful', 0)}")
-print(f"Failed: {data.get('failed', 0)}")
-
-for detail in data.get('details', []):
-    status = "✅" if detail.get('success') else "❌"
-    plugin_name = detail.get('plugin_name', 'unknown')
-    new_strings = detail.get('new_strings', 0)
-    print(f"{status} {plugin_name}: {new_strings} new strings")
-EOF
-          else
-            echo "⚠️ No translation report generated"
-          fi
-
-      - name: Commit and push changes
+      - name: Commit translation changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
           if git diff --name-only | grep -E '\.(po|mo|pot|json)$' > /dev/null; then
-            echo "📝 Found translation changes, committing..."
             git add --all
-            git commit -m "🌍 Update translations [$(date +'%Y-%m-%d %H:%M:%S')]"
+            git commit -m "Update translations [$(date +'%Y-%m-%d %H:%M:%S')]"
             git push
           else
-            echo "✅ No translation files changed"
+            echo "No translation files changed"
