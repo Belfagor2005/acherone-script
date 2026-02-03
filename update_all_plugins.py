@@ -334,27 +334,25 @@ def compile_mo_files(locale_dir: Path) -> int:
 
 def main():
     """Main function - Process ALL plugins"""
-    print("🚀 UNIVERSAL PLUGIN TRANSLATION UPDATER")
+    print("UNIVERSAL PLUGIN TRANSLATION UPDATER")
     print("=" * 60)
 
     # Find all plugins
     plugins = find_all_plugins()
 
     if not plugins:
-        print("❌ No plugins found in repository")
+        print("No plugins found in repository")
         return 1
 
-    print(f"✅ Found {len(plugins)} plugin(s):")
+    print("Found {} plugin(s):".format(len(plugins)))
     for i, plugin in enumerate(plugins, 1):
-        print(f"  {i:2}. {plugin['plugin_name']}")
-        print(f"      📁 {plugin['plugin_dir']}")
-        print(
-            f"      📄 {
-                plugin['py_files']} Python files, {
-                plugin['xml_files']} XML files")
+        print("  {:2}. {}".format(i, plugin['plugin_name']))
+        print("      Directory: {}".format(plugin['plugin_dir']))
+        print("      {} Python files, {} XML files".format(
+            plugin['py_files'], plugin['xml_files']))
 
     # Process each plugin
-    print(f"\n🔄 Processing {len(plugins)} plugin(s)...")
+    print("\nProcessing {} plugin(s)...".format(len(plugins)))
 
     all_results = []
     successful = 0
@@ -365,22 +363,22 @@ def main():
 
         if result['success']:
             successful += 1
-            status = "✅"
+            status = "SUCCESS"
         else:
-            status = "❌"
+            status = "FAILED"
 
-        print(f"{status} {result['plugin_name']}: "
-              f"{result['new_strings']} new strings, "
-              f"{result['updated_po']} PO updated, "
-              f"{result['compiled_mo']} MO compiled")
+        print("{} {}: {} new strings, {} PO updated, {} MO compiled".format(
+            status, result['plugin_name'],
+            result['new_strings'], result['updated_po'], result['compiled_mo']
+        ))
 
     # Generate report
-    print(f"\n{'=' * 60}")
-    print("📊 FINAL REPORT")
-    print(f"{'=' * 60}")
-    print(f"Total plugins: {len(plugins)}")
-    print(f"✅ Successful: {successful}")
-    print(f"❌ Failed: {len(plugins) - successful}")
+    print("\n" + "=" * 60)
+    print("FINAL REPORT")
+    print("=" * 60)
+    print("Total plugins: {}".format(len(plugins)))
+    print("Successful: {}".format(successful))
+    print("Failed: {}".format(len(plugins) - successful))
 
     # Save detailed report
     report = {
@@ -394,7 +392,7 @@ def main():
     with open('translation_update_report.json', 'w', encoding='utf-8') as f:
         json.dump(report, f, indent=2, ensure_ascii=False)
 
-    print("\n📄 Detailed report saved to: translation_update_report.json")
+    print("\nDetailed report saved to: translation_update_report.json")
 
     return 0 if successful > 0 else 1
 
