@@ -22,7 +22,7 @@ from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 
 # Import local modules
-from . import _, fps
+from . import _, __version__, fps
 
 
 AGENTS = [
@@ -32,7 +32,8 @@ AGENTS = [
     "Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 Edge/87.0.664.75",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363"]
-version = 'v.1.2'
+
+__version__ = 'v.1.2'
 
 
 CONFIG = {
@@ -192,7 +193,7 @@ class OpenScript(Screen):
             mytext = ' ' + mysel[1]
             self['description'].setText(str(mytext))
         else:
-            self["description"].setText(_("Script Executor %s") % version)
+            self["description"].setText(_("Script Executor %s") % __version__)
 
     def on_select(self):
         if len(self.mlist) > 0:
