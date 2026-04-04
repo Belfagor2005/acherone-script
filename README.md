@@ -1,6 +1,6 @@
 # 📝 OpenScript for Enigma
 
-**Version 1.1**  
+**Version 1.4**  
 
 **Enigma2 project by Lululla**
 

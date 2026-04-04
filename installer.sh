@@ -3,7 +3,7 @@
 ## setup command=wget -q --no-check-certificate https://raw.githubusercontent.com/Belfagor2005/acherone-script/main/installer.sh -O - | /bin/sh
 
 ## Only This 2 lines to edit with new version ######
-version='1.3'
+version='1.4'
 changelog='Fix Security E2'
 ##############################################################
 

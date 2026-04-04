@@ -5,7 +5,7 @@ __author__ = "Lululla"
 __email__ = "ekekaz@gmail.com"
 __copyright__ = 'Copyright (c) 2024 Lululla'
 __license__ = "GPL-v2"
-__version__ = "1.2"
+__version__ = "1.4"
 
 from Components.Language import language
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
@@ -15,7 +15,7 @@ import os
 
 PluginLanguageDomain = 'Acherone'
 PluginLanguagePath = 'Extensions/Acherone/locale'
-fps = "https://patbuweb.com/script/script.tar"
+fps = "https://github.com/Belfagor2005/acherone-script/raw/refs/heads/main/script.tar"
 
 isDreambox = False
 if os.path.exists("/usr/bin/apt-get"):
