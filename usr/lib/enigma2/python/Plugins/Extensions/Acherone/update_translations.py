@@ -6,10 +6,10 @@ import subprocess
 from xml.etree import ElementTree as ET
 """
 ###########################################################
-Aglare for Enigma2
+Plugin for Enigma2
 Created by: Lululla
 ###########################################################
-Last Updated: 2026-01-31
+Last Updated: 2026-04-19
 Credits: Lululla (modifications)
 Homepage: www.corvoboys.org
           www.linuxsat-support.com
@@ -19,6 +19,7 @@ Homepage: www.corvoboys.org
 PLUGIN_DIR = os.path.dirname(os.path.abspath(__file__))
 PLUGIN_NAME = os.path.basename(PLUGIN_DIR)
 LOCALE_DIR = os.path.join(PLUGIN_DIR, "res", "locale")
+
 
 def get_locale_dir(plugin_dir):
     candidates = [
@@ -30,6 +31,7 @@ def get_locale_dir(plugin_dir):
             return candidate
     # default: verrà creata successivamente
     return os.path.join(plugin_dir, "locale")
+
 
 LOCALE_DIR = get_locale_dir(PLUGIN_DIR)
 POT_FILE = os.path.join(LOCALE_DIR, "{}.pot".format(PLUGIN_NAME))
