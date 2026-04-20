@@ -1,19 +1,14 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/python
 
-# Import standard library
 import codecs
 from os import chmod, listdir, makedirs, remove, system as os_system
 from os.path import exists, join
 from random import choice
 
-# Import third-party libraries
 from requests import exceptions, get
 
-# Import Enigma2 API
 from enigma import eConsoleAppContainer
-
-# Import project-specific components
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.Sources.List import List
@@ -21,7 +16,6 @@ from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 
-# Import local modules
 from . import _, __version__, fps
 
 
@@ -32,8 +26,6 @@ AGENTS = [
     "Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 Edge/87.0.664.75",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363"]
-
-__version__ = 'v.1.2'
 
 
 CONFIG = {
