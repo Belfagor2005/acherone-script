@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "%s"
-msgstr "%μικρό"
-
 msgid "Available Scripts"
 msgstr "Διαθέσιμα Σενάρια"
 
@@ -97,3 +94,6 @@ msgstr "Επιλέγω"
 
 msgid "play/show Files"
 msgstr "αναπαραγωγή/εμφάνιση Αρχείων"
+
+#~ msgid "%s"
+#~ msgstr "%μικρό"

@@ -35,8 +35,6 @@
 
 
 
-msgid "%s"
-msgstr ""
 
 msgid "Available Scripts"
 msgstr ""

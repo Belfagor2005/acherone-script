@@ -16,9 +16,6 @@ msgstr ""
 "X-Poedit-SourceCharset: iso-8859-1\n"
 "X-Poedit-SearchPath-0: .\n"
 
-msgid "%s"
-msgstr "%S"
-
 msgid "Available Scripts"
 msgstr "Script Disponibili"
 
@@ -96,6 +93,9 @@ msgstr "Seleziona"
 
 msgid "play/show Files"
 msgstr "riprodurre/mostrare file"
+
+#~ msgid "%s"
+#~ msgstr "%S"
 
 #~ msgid "Description not available"
 #~ msgstr "Descrizione non disponibile"

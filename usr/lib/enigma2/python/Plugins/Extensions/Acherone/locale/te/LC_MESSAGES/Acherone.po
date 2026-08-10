@@ -16,9 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "%s"
-msgstr ""
-
 msgid "Available Scripts"
 msgstr "అందుబాటులో ఉన్న స్క్రిప్ట్‌లు"
 

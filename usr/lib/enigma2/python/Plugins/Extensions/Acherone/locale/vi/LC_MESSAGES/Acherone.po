@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "%s"
-msgstr "%S"
-
 msgid "Available Scripts"
 msgstr "Tập lệnh có sẵn"
 
@@ -97,3 +94,6 @@ msgstr "Lựa chọn"
 
 msgid "play/show Files"
 msgstr "phát/hiển thị tập tin"
+
+#~ msgid "%s"
+#~ msgstr "%S"

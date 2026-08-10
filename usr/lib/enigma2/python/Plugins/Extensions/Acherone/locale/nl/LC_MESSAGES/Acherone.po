@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "%s"
-msgstr "%S"
-
 msgid "Available Scripts"
 msgstr "Beschikbare scripts"
 
@@ -97,3 +94,6 @@ msgstr "Selecteer"
 
 msgid "play/show Files"
 msgstr "bestanden afspelen/tonen"
+
+#~ msgid "%s"
+#~ msgstr "%S"

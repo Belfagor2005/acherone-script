@@ -16,9 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "%s"
-msgstr "%एस"
-
 msgid "Available Scripts"
 msgstr "उपलब्ध स्क्रिप्ट"
 
@@ -96,3 +93,6 @@ msgstr "चुनना"
 
 msgid "play/show Files"
 msgstr "फ़ाइलें चलाएँ/दिखाएँ"
+
+#~ msgid "%s"
+#~ msgstr "%एस"
