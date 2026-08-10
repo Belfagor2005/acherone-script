@@ -114,7 +114,7 @@ class OpenScript(Screen):
                             break
 
                 if not desc:
-                    desc = _("%s") % fil2
+                    desc = fil2
                 desc = desc.replace('_', ' ').replace('-', ' ').capitalize()
                 scripts.append((fil2, desc))
 
