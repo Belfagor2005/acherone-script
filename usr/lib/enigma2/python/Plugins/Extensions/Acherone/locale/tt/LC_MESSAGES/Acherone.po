@@ -16,9 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "%s"
-msgstr "% s"
-
 msgid "Available Scripts"
 msgstr "Мөмкин сценарийлар"
 
@@ -28,8 +25,8 @@ msgstr "Ябу"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Тасвирлау: \ n"
+msgid "Description:\\\\\\\\n"
+msgstr "Тасвирлау: \\\\\\\\ n"
 
 msgid "Download"
 msgstr "Йөкләү"
@@ -96,3 +93,6 @@ msgstr "Сайлагыз"
 
 msgid "play/show Files"
 msgstr "Файлларны уйнау / күрсәтү"
+
+#~ msgid "%s"
+#~ msgstr "% s"

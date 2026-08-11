@@ -16,9 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "%s"
-msgstr "% s"
-
 msgid "Available Scripts"
 msgstr "ئىشلەتكىلى بولىدىغان ئورگىناللار"
 
@@ -28,8 +25,8 @@ msgstr "تاقاش"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "چۈشەندۈرۈش: \ n"
+msgid "Description:\\\\\\\\n"
+msgstr "چۈشەندۈرۈش: \\\\\\\\ n"
 
 msgid "Download"
 msgstr "چۈشۈرۈش"
@@ -96,3 +93,6 @@ msgstr "تاللاڭ"
 
 msgid "play/show Files"
 msgstr "ھۆججەتلەرنى كۆرسىتىش / كۆرسىتىش"
+
+#~ msgid "%s"
+#~ msgstr "% s"

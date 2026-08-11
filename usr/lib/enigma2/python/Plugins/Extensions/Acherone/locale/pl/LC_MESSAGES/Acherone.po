@@ -26,8 +26,8 @@ msgstr "Zamknąć"
 msgid "Del Line"
 msgstr "Linia Del"
 
-msgid "Description:\n"
-msgstr "Opis:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Opis:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Pobierać"

@@ -26,8 +26,8 @@ msgstr "לִסְגוֹר"
 msgid "Del Line"
 msgstr "דל ליין"
 
-msgid "Description:\n"
-msgstr "תיאור:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "תיאור:\\\\\\\\n"
 
 msgid "Download"
 msgstr "הורד"

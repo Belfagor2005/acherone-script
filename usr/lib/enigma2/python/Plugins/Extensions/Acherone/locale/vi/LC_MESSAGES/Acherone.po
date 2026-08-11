@@ -26,8 +26,8 @@ msgstr "Đóng"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Mô tả:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Mô tả:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Tải xuống"

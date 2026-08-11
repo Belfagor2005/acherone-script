@@ -16,9 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "%s"
-msgstr "% s"
-
 msgid "Available Scripts"
 msgstr "ଉପଲବ୍ଧ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ |"
 
@@ -28,8 +25,8 @@ msgstr "ବନ୍ଦ"
 msgid "Del Line"
 msgstr "ଡେଲ୍ ଲାଇନ୍ |"
 
-msgid "Description:\n"
-msgstr "ବର୍ଣ୍ଣନା: \ n"
+msgid "Description:\\\\\\\\n"
+msgstr "ବର୍ଣ୍ଣନା: \\\\\\\\ n"
 
 msgid "Download"
 msgstr "ଡାଉନଲୋଡ୍ କରନ୍ତୁ |"
@@ -96,3 +93,6 @@ msgstr "ଚୟନ କରନ୍ତୁ |"
 
 msgid "play/show Files"
 msgstr "ଫାଇଲଗୁଡିକ ଚଲାନ୍ତୁ / ଦେଖାନ୍ତୁ |"
+
+#~ msgid "%s"
+#~ msgstr "% s"

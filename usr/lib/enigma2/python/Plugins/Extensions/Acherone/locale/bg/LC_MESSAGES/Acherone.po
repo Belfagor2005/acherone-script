@@ -26,8 +26,8 @@ msgstr "затвори"
 msgid "Del Line"
 msgstr "Дел линия"
 
-msgid "Description:\n"
-msgstr "Описание:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Описание:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Изтегляне"

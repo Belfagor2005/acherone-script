@@ -26,8 +26,8 @@ msgstr "Közeli"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Leírás:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Leírás:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Letöltés"

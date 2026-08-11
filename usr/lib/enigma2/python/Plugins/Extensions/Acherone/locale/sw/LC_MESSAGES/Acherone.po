@@ -25,8 +25,8 @@ msgstr "Funga"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Maelezo:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Maelezo:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Pakua"

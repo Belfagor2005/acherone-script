@@ -26,8 +26,8 @@ msgstr "Dichtbij"
 msgid "Del Line"
 msgstr "Del Lijn"
 
-msgid "Description:\n"
-msgstr "Beschrijving:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Beschrijving:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Downloaden"

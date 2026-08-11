@@ -26,8 +26,8 @@ msgstr "Lähellä"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Kuvaus:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Kuvaus:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Lataa"

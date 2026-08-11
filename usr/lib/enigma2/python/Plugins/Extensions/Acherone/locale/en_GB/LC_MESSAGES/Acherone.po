@@ -25,7 +25,7 @@ msgstr ""
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
+msgid "Description:\\\\\\\\n"
 msgstr ""
 
 msgid "Download"

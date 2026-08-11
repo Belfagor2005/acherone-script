@@ -25,8 +25,8 @@ msgstr "يغلق"
 msgid "Del Line"
 msgstr "ديل لاين"
 
-msgid "Description:\n"
-msgstr "الوصف:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "الوصف:\\\\\\\\n"
 
 msgid "Download"
 msgstr "تحميل"

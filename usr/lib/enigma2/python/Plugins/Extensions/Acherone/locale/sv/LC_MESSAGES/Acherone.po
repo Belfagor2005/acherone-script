@@ -26,8 +26,8 @@ msgstr "Nära"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Beskrivning:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Beskrivning:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Ladda ner"

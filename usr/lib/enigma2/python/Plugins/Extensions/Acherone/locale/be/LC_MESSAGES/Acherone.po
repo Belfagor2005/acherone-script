@@ -26,8 +26,8 @@ msgstr "Блізка"
 msgid "Del Line"
 msgstr "Дэль Лайн"
 
-msgid "Description:\n"
-msgstr "Апісанне:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Апісанне:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Спампаваць"

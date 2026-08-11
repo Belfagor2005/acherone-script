@@ -25,8 +25,8 @@ msgstr "ਬੰਦ ਕਰੋ"
 msgid "Del Line"
 msgstr "ਡੇਲ ਲਾਈਨ"
 
-msgid "Description:\n"
-msgstr "ਵਰਣਨ:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "ਵਰਣਨ:\\\\\\\\n"
 
 msgid "Download"
 msgstr "ਡਾਊਨਲੋਡ ਕਰੋ"

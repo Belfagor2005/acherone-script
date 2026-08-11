@@ -26,8 +26,8 @@ msgstr "닫다"
 msgid "Del Line"
 msgstr "델라인"
 
-msgid "Description:\n"
-msgstr "설명:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "설명:\\\\\\\\n"
 
 msgid "Download"
 msgstr "다운로드"

@@ -16,9 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "%s"
-msgstr "%с"
-
 msgid "Available Scripts"
 msgstr "Доступне скрипте"
 
@@ -28,8 +25,8 @@ msgstr "Затвори"
 msgid "Del Line"
 msgstr "Дел Лине"
 
-msgid "Description:\n"
-msgstr "Опис:\н"
+msgid "Description:\\\\\\\\n"
+msgstr "Опис:\\\\\\\\н"
 
 msgid "Download"
 msgstr "Преузми"
@@ -96,3 +93,6 @@ msgstr "Изаберите"
 
 msgid "play/show Files"
 msgstr "пусти/прикажи датотеке"
+
+#~ msgid "%s"
+#~ msgstr "%с"

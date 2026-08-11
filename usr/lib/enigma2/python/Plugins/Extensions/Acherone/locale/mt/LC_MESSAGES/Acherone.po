@@ -25,8 +25,8 @@ msgstr "Agħlaq"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Deskrizzjoni:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Deskrizzjoni:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Niżżel"

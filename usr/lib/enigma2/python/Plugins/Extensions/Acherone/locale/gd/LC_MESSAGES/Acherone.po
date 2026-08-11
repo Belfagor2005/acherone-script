@@ -25,8 +25,8 @@ msgstr "Dùin"
 msgid "Del Line"
 msgstr "Loidhne Del"
 
-msgid "Description:\n"
-msgstr "Tuairisgeul:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Tuairisgeul:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Luchdaich sìos"

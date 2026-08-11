@@ -25,8 +25,8 @@ msgstr "അടയ്ക്കുക"
 msgid "Del Line"
 msgstr "ഡെൽ ലൈൻ"
 
-msgid "Description:\n"
-msgstr "വിവരണം:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "വിവരണം:\\\\\\\\n"
 
 msgid "Download"
 msgstr "ഡൗൺലോഡ് ചെയ്യുക"

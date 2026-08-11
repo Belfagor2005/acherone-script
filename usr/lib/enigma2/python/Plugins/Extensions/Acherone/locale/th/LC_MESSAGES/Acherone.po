@@ -25,8 +25,8 @@ msgstr "ปิด"
 msgid "Del Line"
 msgstr "เดล ไลน์"
 
-msgid "Description:\n"
-msgstr "คำอธิบาย:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "คำอธิบาย:\\\\\\\\n"
 
 msgid "Download"
 msgstr "ดาวน์โหลด"

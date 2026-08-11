@@ -25,8 +25,8 @@ msgstr "تړل"
 msgid "Del Line"
 msgstr "ډیل لاین"
 
-msgid "Description:\n"
-msgstr "توضیحات:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "توضیحات:\\\\\\\\n"
 
 msgid "Download"
 msgstr "ډاونلوډ کړئ"

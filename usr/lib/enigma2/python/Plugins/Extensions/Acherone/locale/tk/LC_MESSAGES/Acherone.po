@@ -16,9 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "%s"
-msgstr "% s"
-
 msgid "Available Scripts"
 msgstr "Elýeterli skriptler"
 
@@ -28,8 +25,8 @@ msgstr ".Akyn"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Düşündiriş: \ n"
+msgid "Description:\\\\\\\\n"
+msgstr "Düşündiriş: \\\\\\\\ n"
 
 msgid "Download"
 msgstr "Göçürip al"
@@ -96,3 +93,6 @@ msgstr "Saýlaň"
 
 msgid "play/show Files"
 msgstr "Faýllary oýnamak / görkezmek"
+
+#~ msgid "%s"
+#~ msgstr "% s"

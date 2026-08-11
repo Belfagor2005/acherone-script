@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-msgid "%s"
-msgstr "%с"
-
 msgid "Available Scripts"
 msgstr "Доступне скрипте"
 
@@ -29,8 +26,8 @@ msgstr "Затвори"
 msgid "Del Line"
 msgstr "Дел Лине"
 
-msgid "Description:\n"
-msgstr "Опис:\н"
+msgid "Description:\\\\\\\\n"
+msgstr "Опис:\\\\\\\\н"
 
 msgid "Download"
 msgstr "Преузми"
@@ -97,3 +94,6 @@ msgstr "Изаберите"
 
 msgid "play/show Files"
 msgstr "пусти/прикажи датотеке"
+
+#~ msgid "%s"
+#~ msgstr "%с"

@@ -25,8 +25,8 @@ msgstr "Slute"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Beskriuwing:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Beskriuwing:\\\\\\\\n"
 
 msgid "Download"
 msgstr ""

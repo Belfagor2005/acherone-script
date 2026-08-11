@@ -25,8 +25,8 @@ msgstr "tutup"
 msgid "Del Line"
 msgstr "Talian Del"
 
-msgid "Description:\n"
-msgstr "Penerangan:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Penerangan:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Muat turun"

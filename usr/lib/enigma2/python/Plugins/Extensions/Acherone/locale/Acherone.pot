@@ -4,38 +4,6 @@
 # [lululla] <ekekaz@gmail.com>, 2025.
 #
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 msgid "Available Scripts"
 msgstr ""
 
@@ -45,7 +13,7 @@ msgstr ""
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
+msgid "Description:\\n"
 msgstr ""
 
 msgid "Download"

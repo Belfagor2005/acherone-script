@@ -25,8 +25,8 @@ msgstr "বন্ধ"
 msgid "Del Line"
 msgstr "ডেল লাইন"
 
-msgid "Description:\n"
-msgstr "বর্ণনা:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "বর্ণনা:\\\\\\\\n"
 
 msgid "Download"
 msgstr "ডাউনলোড করুন"

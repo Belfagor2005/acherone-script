@@ -25,8 +25,8 @@ msgstr "Mbylle"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Përshkrimi:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Përshkrimi:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Shkarkoni"

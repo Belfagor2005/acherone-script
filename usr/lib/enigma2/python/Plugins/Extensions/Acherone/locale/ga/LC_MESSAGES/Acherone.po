@@ -26,8 +26,8 @@ msgstr "Dún"
 msgid "Del Line"
 msgstr "Del Líne"
 
-msgid "Description:\n"
-msgstr "Cur síos:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Cur síos:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Íosluchtaigh"

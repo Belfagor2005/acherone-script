@@ -25,8 +25,8 @@ msgstr "נאָענט"
 msgid "Del Line"
 msgstr "דעל ליניע"
 
-msgid "Description:\n"
-msgstr "באַשרייַבונג:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "באַשרייַבונג:\\\\\\\\n"
 
 msgid "Download"
 msgstr "אראפקאפיע"

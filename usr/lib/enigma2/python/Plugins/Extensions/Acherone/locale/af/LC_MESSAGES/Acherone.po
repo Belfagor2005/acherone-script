@@ -25,8 +25,8 @@ msgstr "Maak toe"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Beskrywing:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Beskrywing:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Laai af"

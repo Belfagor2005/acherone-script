@@ -25,8 +25,8 @@ msgstr "ገጠመ"
 msgid "Del Line"
 msgstr "ዴል መስመር"
 
-msgid "Description:\n"
-msgstr "መግለጫ፡\n"
+msgid "Description:\\\\\\\\n"
+msgstr "መግለጫ፡\\\\\\\\n"
 
 msgid "Download"
 msgstr "አውርድ"

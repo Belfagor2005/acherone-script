@@ -25,8 +25,8 @@ msgstr "වසන්න"
 msgid "Del Line"
 msgstr "ඩෙල් ලයින්"
 
-msgid "Description:\n"
-msgstr "විස්තරය:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "විස්තරය:\\\\\\\\n"
 
 msgid "Download"
 msgstr "බාගන්න"

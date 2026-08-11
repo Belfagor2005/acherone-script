@@ -25,8 +25,8 @@ msgstr "மூடு"
 msgid "Del Line"
 msgstr "டெல் லைன்"
 
-msgid "Description:\n"
-msgstr "விளக்கம்:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "விளக்கம்:\\\\\\\\n"
 
 msgid "Download"
 msgstr "பதிவிறக்கவும்"

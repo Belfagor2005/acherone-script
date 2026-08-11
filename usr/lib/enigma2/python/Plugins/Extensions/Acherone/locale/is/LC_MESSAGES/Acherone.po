@@ -25,8 +25,8 @@ msgstr "Loka"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Lýsing:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Lýsing:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Sækja"

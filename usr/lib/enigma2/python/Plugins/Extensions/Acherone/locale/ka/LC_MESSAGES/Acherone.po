@@ -25,8 +25,8 @@ msgstr "დახურვა"
 msgid "Del Line"
 msgstr "დელ ლაინი"
 
-msgid "Description:\n"
-msgstr "აღწერა:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "აღწერა:\\\\\\\\n"
 
 msgid "Download"
 msgstr "ჩამოტვირთვა"

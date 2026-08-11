@@ -25,8 +25,8 @@ msgstr "Itxi"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Deskribapena:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Deskribapena:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Deskargatu"

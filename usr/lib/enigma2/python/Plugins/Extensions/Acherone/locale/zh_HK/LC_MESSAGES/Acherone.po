@@ -25,8 +25,8 @@ msgstr "關閉"
 msgid "Del Line"
 msgstr "德爾線"
 
-msgid "Description:\n"
-msgstr "說明:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "說明:\\\\\\\\n"
 
 msgid "Download"
 msgstr "下載"

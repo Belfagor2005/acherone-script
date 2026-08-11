@@ -25,8 +25,8 @@ msgstr "Пӯшед"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Тавсифи:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Тавсифи:\\\\\\\\n"
 
 msgid "Download"
 msgstr "Зеркашӣ кунед"

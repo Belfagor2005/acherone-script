@@ -25,8 +25,8 @@ msgstr "Nêzîkî"
 msgid "Del Line"
 msgstr ""
 
-msgid "Description:\n"
-msgstr "Danasîn:\n"
+msgid "Description:\\\\\\\\n"
+msgstr "Danasîn:\\\\\\\\n"
 
 msgid "Download"
 msgstr ""
