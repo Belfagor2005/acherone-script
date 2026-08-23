@@ -26,8 +26,9 @@ msgstr "לִסְגוֹר"
 msgid "Del Line"
 msgstr "דל ליין"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "תיאור:\\\\\\\\n"
+msgstr "תיאור:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "הורד"

@@ -25,8 +25,9 @@ msgstr "关闭"
 msgid "Del Line"
 msgstr "德尔线"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "说明:\\\\\\\\n"
+msgstr "说明:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "下载"

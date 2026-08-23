@@ -26,8 +26,9 @@ msgstr "Kapalı"
 msgid "Del Line"
 msgstr "Del Hattı"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Açıklama:\\\\\\\\n"
+msgstr "Açıklama:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "İndirmek"

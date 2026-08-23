@@ -26,8 +26,9 @@ msgstr "Aproape"
 msgid "Del Line"
 msgstr ""
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Descriere:\\\\\\\\n"
+msgstr "Descriere:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Descărcați"

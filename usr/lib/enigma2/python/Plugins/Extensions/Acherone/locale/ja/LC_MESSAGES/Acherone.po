@@ -26,8 +26,9 @@ msgstr "近い"
 msgid "Del Line"
 msgstr "デルライン"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "説明:\\\\\\\\n"
+msgstr "説明:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "ダウンロード"

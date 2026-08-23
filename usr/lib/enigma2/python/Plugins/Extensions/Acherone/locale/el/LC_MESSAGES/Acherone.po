@@ -26,8 +26,9 @@ msgstr "Κοντά"
 msgid "Del Line"
 msgstr ""
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Περιγραφή:\\\\\\\\n"
+msgstr "Περιγραφή:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Λήψη"

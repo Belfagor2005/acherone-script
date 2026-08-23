@@ -25,8 +25,9 @@ msgstr "बंद करा"
 msgid "Del Line"
 msgstr "डेल लाइन"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "वर्णन:\\\\\\\\n"
+msgstr "वर्णन:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "डाउनलोड करा"

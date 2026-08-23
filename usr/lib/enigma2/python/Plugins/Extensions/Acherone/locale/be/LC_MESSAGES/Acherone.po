@@ -26,8 +26,9 @@ msgstr "Блізка"
 msgid "Del Line"
 msgstr "Дэль Лайн"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Апісанне:\\\\\\\\n"
+msgstr "Апісанне:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Спампаваць"

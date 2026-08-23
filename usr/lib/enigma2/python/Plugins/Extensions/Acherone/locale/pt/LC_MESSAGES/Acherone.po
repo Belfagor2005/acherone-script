@@ -26,8 +26,9 @@ msgstr "Fechar"
 msgid "Del Line"
 msgstr "Del Linha"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Descrição:\\\\\\\\n"
+msgstr "Descrição:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr ""

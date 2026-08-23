@@ -26,8 +26,9 @@ msgstr "Fermu"
 msgid "Del Line"
 msgstr "Del Linio"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Priskribo:\\\\\\\\n"
+msgstr "Priskribo:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Elŝutu"

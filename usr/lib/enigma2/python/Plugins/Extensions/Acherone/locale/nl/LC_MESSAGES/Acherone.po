@@ -26,8 +26,9 @@ msgstr "Dichtbij"
 msgid "Del Line"
 msgstr "Del Lijn"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Beschrijving:\\\\\\\\n"
+msgstr "Beschrijving:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Downloaden"

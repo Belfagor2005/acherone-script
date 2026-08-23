@@ -26,8 +26,9 @@ msgstr "Zavrieť"
 msgid "Del Line"
 msgstr ""
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Popis:\\\\\\\\n"
+msgstr "Popis:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Stiahnuť"

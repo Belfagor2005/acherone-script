@@ -26,8 +26,9 @@ msgstr "Đóng"
 msgid "Del Line"
 msgstr ""
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Mô tả:\\\\\\\\n"
+msgstr "Mô tả:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Tải xuống"

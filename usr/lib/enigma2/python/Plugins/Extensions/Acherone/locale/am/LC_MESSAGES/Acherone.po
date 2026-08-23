@@ -25,8 +25,9 @@ msgstr "ገጠመ"
 msgid "Del Line"
 msgstr "ዴል መስመር"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "መግለጫ፡\\\\\\\\n"
+msgstr "መግለጫ፡\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "አውርድ"

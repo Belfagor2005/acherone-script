@@ -25,8 +25,9 @@ msgstr "بستن"
 msgid "Del Line"
 msgstr "دل لاین"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "توضیحات:\\\\\\\\n"
+msgstr "توضیحات:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "دانلود کنید"

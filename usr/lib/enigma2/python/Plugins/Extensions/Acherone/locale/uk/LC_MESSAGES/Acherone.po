@@ -26,8 +26,9 @@ msgstr "Закрити"
 msgid "Del Line"
 msgstr "Дель Лайн"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Опис:\\\\\\\\n"
+msgstr "Опис:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Завантажити"

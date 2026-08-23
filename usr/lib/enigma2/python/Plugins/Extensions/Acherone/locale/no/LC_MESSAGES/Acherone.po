@@ -26,8 +26,9 @@ msgstr "Lukke"
 msgid "Del Line"
 msgstr ""
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Beskrivelse:\\\\\\\\n"
+msgstr "Beskrivelse:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Last ned"

@@ -25,8 +25,9 @@ msgstr "Menutup"
 msgid "Del Line"
 msgstr "Jalur Del"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Deskripsi:\\\\\\\\n"
+msgstr "Deskripsi:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Unduh"

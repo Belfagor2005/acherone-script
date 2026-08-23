@@ -26,8 +26,9 @@ msgstr "Aizvērt"
 msgid "Del Line"
 msgstr ""
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Apraksts:\\\\\\\\n"
+msgstr "Apraksts:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Lejupielādēt"

@@ -25,8 +25,9 @@ msgstr "تړل"
 msgid "Del Line"
 msgstr "ډیل لاین"
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "توضیحات:\\\\\\\\n"
+msgstr "توضیحات:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "ډاونلوډ کړئ"

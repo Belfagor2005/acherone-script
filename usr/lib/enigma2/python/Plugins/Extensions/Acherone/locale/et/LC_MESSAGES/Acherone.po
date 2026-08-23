@@ -26,8 +26,9 @@ msgstr "Sule"
 msgid "Del Line"
 msgstr ""
 
+#, fuzzy
 msgid "Description:\\\\\\\\n"
-msgstr "Kirjeldus:\\\\\\\\n"
+msgstr "Kirjeldus:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n"
 
 msgid "Download"
 msgstr "Laadi alla"
